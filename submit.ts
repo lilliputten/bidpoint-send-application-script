@@ -24,8 +24,12 @@ interface Payload {
   salary?: number;
 }
 
-// Read message from file
-const message = fs.readFileSync('message.txt', 'utf-8').trim();
+// Sanitize and read message from file
+const rawMessage = fs.readFileSync('message.txt', 'utf-8');
+const message = rawMessage
+  .trim()
+  // Replace newlines and multiple whitespace with single spaces (it might break the server script)
+  .replace(/\s+/g, ' ');
 
 // Construct payload
 const payload: Payload = {
@@ -63,16 +67,19 @@ async function submitApplication(isDryRun: boolean = false): Promise<void> {
       headers['x-dry-run'] = 'true';
     }
 
+    const payloadJson = JSON.stringify(payload, null, 2);
     console.log('[submit:submitApplication] before send', {
       API_URL,
       payload,
+      message,
+      payloadJson,
       timestamp,
       signature,
       form,
       headers,
       isDryRun,
     });
-    debugger; // eslint-disable-line no-debugger
+    // debugger; // eslint-disable-line no-debugger
 
     // Send request
     const response = await axios.post(API_URL, form, { headers });
@@ -87,6 +94,17 @@ async function submitApplication(isDryRun: boolean = false): Promise<void> {
       response,
     });
     debugger; // eslint-disable-line no-debugger
+
+    /* // Successful responses:
+     *
+     * Dry-run mode:
+     * message = 'Dry run successful! Your data would have been saved.'
+     * status = 'ok'
+     *
+     * // Real mode:
+     * message = 'Your application has been submitted successfully! We will get in touch if you are selected.'
+     * status = 'ok'
+     */
   } catch (error) {
     if (axios.isAxiosError(error)) {
       // Handle AxiosError with detailed information in a single console.error call
@@ -95,10 +113,10 @@ async function submitApplication(isDryRun: boolean = false): Promise<void> {
         message,
         status: error.response?.status,
         statusText: error.response?.statusText,
+        responseData: error.response?.data,
         url: error.request?.path || error.config?.url,
         method: error.config?.method,
         headers: error.config?.headers,
-        responseData: error.response?.data,
         timeout: error.config?.timeout,
         errorCode: error.code,
         stack: error.stack,
@@ -106,6 +124,7 @@ async function submitApplication(isDryRun: boolean = false): Promise<void> {
         isDev,
         API_URL,
       });
+      debugger; // eslint-disable-line no-debugger
     } else {
       // Handle generic errors
       const message = error instanceof Error ? error.message : String(error);
@@ -116,8 +135,8 @@ async function submitApplication(isDryRun: boolean = false): Promise<void> {
         isDev,
         API_URL,
       });
+      debugger; // eslint-disable-line no-debugger
     }
-    debugger; // eslint-disable-line no-debugger
   }
 }
 
