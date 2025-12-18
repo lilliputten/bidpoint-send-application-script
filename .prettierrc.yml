@@ -1,0 +1,39 @@
+bracketSpacing: true
+endOfLine: lf
+semi: true
+singleQuote: true
+tabWidth: 2
+trailingComma: all
+printWidth: 100
+importOrder:
+  - '@shared'
+  - ''
+  - '^(react/(.*)$)|^(react$)'
+  - '^(next/(.*)$)|^(next$)'
+  - '^(jest/(.*)$)|^(jest)'
+  - '@testing-library'
+  - '@[A-Za-z]'
+  - '<BUILTIN_MODULES>'
+  - '<THIRD_PARTY_MODULES>'
+  - ''
+  - '^@/env(.*)$'
+  - '^@/lib/types/(.*)$'
+  - '^@/config/(.*)$'
+  - '^@/lib/(.*)$'
+  - '^@/hooks/(.*)$'
+  - '^@/components/ui/(.*)$'
+  - '^@/components/(.*)$'
+  - '^@/styles/(.*)$'
+  - '^@/app/(.*)$'
+  - '^@/'
+  - ''
+  - '^[./]'
+  - ''
+  - '^[./].*.(css|less|scss)$'
+importOrderParserPlugins:
+  - typescript
+  - jsx
+  - decorators-legacy
+plugins:
+  - '@ianvs/prettier-plugin-sort-imports'
+  # - prettier-plugin-tailwindcss

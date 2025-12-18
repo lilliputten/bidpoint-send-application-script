@@ -1,0 +1,54 @@
+// ex: set ft=jsonc:sw=2:ts=4:
+// @changed 2025.12.18, 04:45
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit:
+  // https://code.visualstudio.com/docs/editor/debugging#_launch-configurations
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "debug submit.ts",
+      "program": "${workspaceFolder}/submit.ts",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "tsx",
+      "args": [
+        "--dry-run"
+        // "--debug"
+      ]
+    },
+    {
+      "name": "nodemon mock-server",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "nodemon",
+      "program": "${workspaceFolder}/mock-server.ts",
+      "console": "integratedTerminal",
+      "restart": true,
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "run current javascript",
+      "program": "${file}",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node"
+    },
+    {
+      "name": "run current typescript",
+      "program": "${file}",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "tsx"
+    },
+    {
+      "name": "run single jest test",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm exec jest --no-watch --testTimeout=60000 test-name"
+    }
+  ]
+}

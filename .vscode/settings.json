@@ -1,0 +1,17 @@
+{
+  "search.excludeFolders": [".next", "dist", ".git", "node_modules", ".venv"],
+  "search.exclude": {
+    "src/generated": true,
+    "*.session": true,
+    "tsconfig.tsbuildinfo": true,
+    "pnpm-lock.yaml": true,
+    "dist": true,
+    "public": true,
+    "node_modules": true
+  },
+  "files.exclude": {
+    "**/*~": true,
+    "**/*.tmp": true,
+    "**/.*.sw?": true
+  }
+}

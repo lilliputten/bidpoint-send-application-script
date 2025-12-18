@@ -1,0 +1,19 @@
+Hi Bidpointers,
+
+Just found the job post and saw that I did not quite fit the requirements, but was really interested in the task itself.
+
+Ready to discuss the mismatches, in case of interest, and there is some info, JFC:
+
+I am a Front/Fullstack Web Developer with over 8 years of commercial development experience, specializing in JavaScript/TypeScript (React, NextJS, NodeJS) and Python (Django, Flask). Skilled in building a wide range of web applications, from complex dynamic systems to static landing pages, including embedded browser applications, using modern adaptive layout in accordance with the mobile-first principle.
+
+Proficient in modern interface creation technologies such as React/NextJS with MobX or Redux, TypeScript and CSS frameworks, including TailwindCSS, Bootstrap and MUI. Have experience developing backend software using Python (Flask, Django), Next.js or Express, as well as outdated PHP projects. Furthermore, work with Maria/MySQL, Postgres, Mongo databases, as well as with ORM solutions like Django models, Prisma, or TinyDB. From 2016 to 2023, participated in complex projects in the field of GIS and IoT. Recently expanding expertise into mobile app development with Flutter.
+
+Have B2-level English proficiency, Russian native speaker, currently study Spanish. Currently in Russia (that apparently is one of the mismatches) but going to move out (back to Thailand or to Spain, have not decided it yet). Currently open to relocation or remote work.
+
+Look at https://lilliputten.com/ for more details, or grab a printable CV from https://lilliputten.com/cv.pdf (it has been already attached to this post, if I succeeded).
+
+Thanks, it was fun.
+
+Regards,
+Igor
+

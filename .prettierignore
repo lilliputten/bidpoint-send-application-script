@@ -1,0 +1,7 @@
+node_modules
+.next
+.contentlayer
+pnpm-lock.yaml
+src/generated
+
+**/*.mdx
